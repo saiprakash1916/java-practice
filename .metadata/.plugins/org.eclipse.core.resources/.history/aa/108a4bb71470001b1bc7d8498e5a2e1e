@@ -1,0 +1,35 @@
+package programming;
+public class Student {
+	private int id;
+	private String name;
+	private double per;
+	public Student(int id, String name, double per) {
+		this.id = id;
+		this.name = name;
+		this.per = per;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	/**
+	 * @return the per
+	 */
+	public double getPer() {
+		return per;
+	}
+	/**
+	 * @param per the per to set
+	 */
+	public void setPer(double per) {
+		this.per = per;
+	}
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
+	} 
+}

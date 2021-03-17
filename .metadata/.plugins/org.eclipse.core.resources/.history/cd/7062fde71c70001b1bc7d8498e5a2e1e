@@ -1,0 +1,49 @@
+package programming;
+import java.util.*;
+public class Toppers {
+	private static final String Student = null;
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		ArrayList std = new ArrayList(5);
+		String res=null;
+		do {
+			System.out.println("Enter the student Id Name and Percentage: ");
+			int id=sc.nextInt();
+			String name=sc.next();
+			double per=sc.nextDouble();
+			Student s=new Student(id, name, per);
+			boolean rs = std.add(s);
+			if(rs)
+				System.out.println("Successfully added student details");
+			else
+				System.out.println("Fails to add student details");
+			System.out.println("Do you have any student information");
+			res=sc.next();
+		}while(res.equalsIgnoreCase("Yes"));
+		System.out.println("User Enterd Student information ");
+		Iterator it = std.iterator();
+		while(it.hasNext())
+			System.out.println(it.next());
+		
+		//by using for loop
+		Student hp =(Student)std.get(0);
+		for(int i=1;i<std.size();i++) {
+			Student s = (Student)std.get(i);
+			if(hp.getPer()>s.getPer());
+			hp=s;
+		}
+		System.out.println("Highest percentage is");
+		System.out.println(hp);
+		
+		//by using iterator method
+		Student lp =(Student)std.get(0);
+		it=std.iterator();
+		while(it.hasNext()) {
+			Student s=(Student) it.next();
+			if(lp.getPer()<s.getPer());
+			lp=s;
+		}
+		System.out.println("Lowest percentahe is");
+		System.out.println(lp);
+	}
+}

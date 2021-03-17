@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main {
+public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
+	TreeSet ts = new TreeSet();
+	String res = null;
+	do {
+		System.out.println("Enter the product Id Name and Price");
+		int id = sc.nextInt();
+		String name=sc.next();
+		double price=sc.nextDouble();
+		Product p = new Product(id,name,price);
+		boolean rs = pts.add(p);
+		if(rs)
+			System.out.println("Successfully added");
+		else
+			System.out.println("Fails to add");
+		System.out.println("Do you have more products");
+		res=sc.next();
+	}while(res.equalsIgnoreCase ("yes"));
+	sc.close();
+	System.out.println("User Entered product Information: ");
+}
+}
